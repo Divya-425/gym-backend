@@ -1,7 +1,18 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsString, IsNumber } from 'class-validator';
 
 export class CreateGymDto {
-  @IsNotEmpty()
   @IsString()
+  @IsNotEmpty()
   name!: string;
+
+  @IsString()
+  @IsNotEmpty()
+  trainer!: string;
+
+  @IsString()
+  @IsNotEmpty()
+  location!: string;
+
+  @IsNumber()
+  fees!: number;
 }

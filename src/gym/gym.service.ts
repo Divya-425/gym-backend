@@ -27,4 +27,7 @@ export class GymService {
       { new: true },
     );
   }
+  async delete(id: string) {
+  return this.gymModel.findByIdAndDelete(id);
+}
 }

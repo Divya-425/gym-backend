@@ -4,7 +4,9 @@ import {
   Post,
   Patch,
   Body,
+  Delete,
   Param,
+
 } from '@nestjs/common';
 
 import { GymService } from './gym.service';
@@ -38,4 +40,8 @@ export class GymController {
       message: `Gym ID received: ${id}`,
     };
   }
+  @Delete(':id')
+deleteGym(@Param('id') id: string) {
+  return this.gymService.delete(id);
+}
 }
